@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Home Page";
+    @model LoginUser //importing the player class for vali
+}
+<link rel="stylesheet" href="~/css/Home.css">
+
+
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        <div class="col">
+
+            <form action="/Login" method="POST">
+
+
+                <div class="form-group">
+                    
+                    <label asp-for="LoginEmail">Email</label>
+                    <input type="LoginEmail" class="form-control" id="Email" asp-for="LoginEmail">
+                    <span asp-validation-for="LoginEmail"></span>
+
+                </div>
+
+                <div class="form-group">
+                            
+                    <label asp-for="LoginPassword">Password</label>
+                    <input type="Password"  class="form-control" id="" asp-for="LoginPassword">
+                    <span asp-validation-for="LoginPassword"></span>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-outline-info">Log In</button>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</div>

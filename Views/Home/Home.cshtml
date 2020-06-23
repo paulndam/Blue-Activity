@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+<div id="jumboone" class="jumbotron">
+    <h1 class="display-4">Blue Activity Center</h1>
+    
+</div>
+
+<link rel="stylesheet" href="~/css/Home.css">
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div id="colone" class="col-4">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div id="card" class="card-header">Register</div>
+                <div class="card-body">
+                    <partial name="RegisterUserPartial" />
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="coltwo" class="col-4">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div id="card" class="card-header">Log In</div>
+                <div class="card-body">
+                    <partial name="LoginUserPartial" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+

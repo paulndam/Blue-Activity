@@ -1,0 +1,142 @@
+@{
+    ViewData["Title"] = "Home Page";
+    //@model Fan
+    @model Center
+}
+
+
+
+<div id="jumboone" class="jumbotron">
+    <h1 class="display-4">Plan your Activity</h1>
+    
+</div>
+
+<link rel="stylesheet" href="~/css/Home.css">
+
+
+<div class="container">
+
+
+    <div class="row justify-content-end">
+        <div id="colone" class="col-md-6 offset-md-3">
+            <div id="dashboard">
+                <a href="/Dashboard" class="btn btn-outline-info" role="button" aria-pressed="true">Dashboard</a>
+            </div>
+            
+        </div>
+
+        <div class="col-4">
+            <div id="logout">
+                <a href="/logout" class="btn btn-outline-info" role="button" aria-pressed="true">logout</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row justify-content-center">
+
+        <div id="coltwo" class="col-md-6 offset-md-3">
+
+            <div id="cardthree" class="card bg-light mb-3" style="max-width: 18rem;">
+                <div id="card" class="card-header">Add a Game</div>
+                <div class="card-body">
+
+                    <form action="/UpdatingCenter/@Model.CenterId" method="POST">
+
+                        <div id="form-group" class="form-group">
+
+                            <div class="form-group col-md-6">
+
+                                <label asp-for="Title">Title</label>
+                                <input asp-for="Title" class="form-control" id="" asp-for="Title">
+                                <span asp-validation-for="Title"></span>
+
+                            </div>
+
+
+                            <div class="form-group col-md-6">
+
+                                <label asp-for="Description">Description</label>
+                                <textarea asp-for="Description" class="form-control" id="" asp-for="Description" rows="5"></textarea>
+                                <span asp-validation-for="Description"></span>
+
+                            </div>
+
+                    
+                            <div class="form-group col-md-6">
+
+                                <label asp-for="ActivityTime">Activity Time</label>
+                                <input type="time" class="form-control" id="" asp-for="ActivityTime">
+                                <span asp-validation-for="ActivityTime"></span>
+
+                            </div>
+
+
+                            <div class="form-group col-md-6">
+
+                                <label asp-for="Time">Date</label>
+                                <input asp-for="Time" class="form-control" id="" asp-for="Time">
+                                <span asp-validation-for="Time"></span>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+
+                                <label asp-for="Duration">Game Duration</label>
+                                <input asp-for="Duration" class="form-control" id="" asp-for="Duration">
+                                <span asp-validation-for="Duration"></span>
+
+                            </div>
+
+
+                            
+
+
+                            <button type="submit" class="btn btn-outline-info">Plan</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

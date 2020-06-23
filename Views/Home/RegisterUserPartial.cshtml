@@ -1,0 +1,98 @@
+@{
+    ViewData["Title"] = "Home Page";
+    @model User //importing the player class for vali
+}
+<link rel="stylesheet" href="~/css/Home.css">
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form action="/Register" method="POST">
+                        <div class="form-group">
+                            
+                            <label asp-for="Firstname">First Name</label>
+                            <input  class="form-control"  asp-for="Firstname">
+                            <span asp-validation-for="Firstname"></span>
+
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <label asp-for="Lastname">Last Name</label>
+                            <input  class="form-control"  asp-for="Lastname">
+                            <span asp-validation-for="Lastname"></span>
+
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <label asp-for="Email">Email</label>
+                            <input  class="form-control" asp-for="Email">
+                            <span asp-validation-for="Email"></span>
+
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <label asp-for="Password">Password</label>
+                            <input class="form-control" id="" asp-for="Password">
+                            <span asp-validation-for="Password"></span>
+
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <label asp-for="ConfirmPassword">Confirm Password</label>
+                            <input type="Password"  class="form-control" id="" asp-for="ConfirmPassword">
+                            <span asp-validation-for="ConfirmPassword"></span>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-outline-info">Register</button>
+
+                    </form>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
