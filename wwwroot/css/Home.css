@@ -98,6 +98,10 @@ span{
   width: 650px;
 }
 
+.card{
+  width: 750px;
+}
+
 #coltwo{
   width: 750px;
   
@@ -112,6 +116,10 @@ span{
 
 #form-group{
   width: 450px;
+}
+
+.form-control{
+  width: 200px;
 }
 
 .table{
@@ -134,6 +142,10 @@ span{
 #center{
   margin-left: 230px;
   width: 650px;
+}
+.container-fluid{
+  /* background-color: springgreen; */
+  width: 750px;
 }
 
 

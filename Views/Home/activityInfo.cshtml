@@ -1,134 +1,137 @@
-@{
-    ViewData["Title"] = "Home Page";
-    //@model Fan
-    @model Center
-}
+<div class="container-fluid">
+    @{
+        ViewData["Title"] = "Home Page";
+        //@model Fan
+        @model Center
+    }
 
 
-<div id="jumboone" class="jumbotron">
-    <h1 class="display-4">@Model.Title</h1>
-    
-</div>
+    <div id="jumboone" class="jumbotron">
+        <h1 class="display-4">@Model.Title</h1>
+        
+    </div>
 
-<h5>Welcome @ViewBag.User.Firstname </h5>
+    <h5>Welcome @ViewBag.User.Firstname </h5>
 
+    @* <div class="container-fluid"> *@
 
-
-<div class="row justify-content-around">
-        <div class="col-4">
-            <div id="logout">
-                <a href="/Dashboard" class="btn btn-outline-info" role="button" aria-pressed="true">Dashboard</a>
-            </div>
-            
-        </div>
-
-        <div class="col-4">
-            <div id="logout">
-                <a href="/logout" class="btn btn-outline-info" role="button" aria-pressed="true">logout</a>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div id="join">
+    <div class="row justify-content-around">
+            <div class="col-4">
+                <div id="logout">
+                    <a href="/Dashboard" class="btn btn-outline-info" role="button" aria-pressed="true">Dashboard</a>
+                </div>
                 
-                @if(ViewBag.User.UserId == @Model.MyCenter.UserId)
-                {
+            </div>
 
-                <a class="btn btn-danger btn-sm" href="/RemoveCenter/@Model.CenterId">Cancel</a>
-                }
-                else
-                {
-                    if(@Model.OtherUsersComingToCenter.Any(y=>y.UserId == ViewBag.User.UserId))
+            <div class="col-4">
+                <div id="logout">
+                    <a href="/logout" class="btn btn-outline-info" role="button" aria-pressed="true">logout</a>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div id="join">
+                    
+                    @if(ViewBag.User.UserId == @Model.MyCenter.UserId)
                     {
-                        <a class="btn btn-warning btn-sm" href="/LeaveAddCenterToExercise/@Model.CenterId" >Leave</a>
+
+                    <a class="btn btn-danger btn-sm" href="/RemoveCenter/@Model.CenterId">Cancel</a>
                     }
                     else
                     {
-                        
-                        <a class="btn btn-success btn-sm" href="/AddCenterToExercise/@Model.CenterId" >Join</a>
+                        if(@Model.OtherUsersComingToCenter.Any(y=>y.UserId == ViewBag.User.UserId))
+                        {
+                            <a class="btn btn-warning btn-sm" href="/LeaveAddCenterToExercise/@Model.CenterId" >Leave</a>
+                        }
+                        else
+                        {
+                            
+                            <a class="btn btn-success btn-sm" href="/AddCenterToExercise/@Model.CenterId" >Join</a>
+                        }
                     }
-                }
+                </div>
             </div>
+
+
+
+
+
         </div>
-
-
-
-
-
     </div>
 
-<link rel="stylesheet" href="~/css/Home.css">
+    <link rel="stylesheet" href="~/css/Home.css">
 
 
-<div class="container">
+    <div class="container">
 
-    
-    <div id="start" class="row justify-content-start">
-        <div class="col-4">
-            <h5>Event Cordinator:- @Model.MyCenter.Firstname</h5>
+        
+        <div id="start" class="row justify-content-start">
+            <div class="col-4">
+                <h5>Event Cordinator:- @Model.MyCenter.Firstname</h5>
+            </div>
+            
+            
         </div>
-        
-        
-    </div>
 
-    <div id="start" class="row justify-content-start">
-        <div class="col-4">
+        <div id="start" class="row justify-content-start">
+            <div class="col-4">
 
 
 
-            <div id="center" class="row align-items-center">
-                
-                <div class="col">
-                    <div class="header">
-                        <h4>Description</h4>
+                <div id="center" class="row align-items-center">
+                    
+                    <div class="col">
+                        <div class="header">
+                            <h4>Description</h4>
 
-                        <p>@Model.Description</p>
+                            <p>@Model.Description</p>
+
+
+
+                        </div>
+
+
 
 
 
                     </div>
-
-
-
-
-
-                </div>
-                
-            </div>
-
-
-
-
-
-
-            <div class="card bg-light mb-3" style="max-width: 20rem;">
-                <div id="card" class="card-header">Participants</div>
-                <div class="card-body">
-                    <ul class="list-group">
-                        @foreach(var c in Model.OtherUsersComingToCenter)
-                        {
-                        <li class="list-group-item">@c.User.Firstname</li>
-                        }
-                        
-                    </ul>
                     
-
                 </div>
 
+
+
+
+
+
+                <div class="card bg-light mb-3" style="max-width: 20rem;">
+                    <div id="card" class="card-header">Participants</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach(var c in Model.OtherUsersComingToCenter)
+                            {
+                            <li class="list-group-item">@c.User.Firstname</li>
+                            }
+                            
+                        </ul>
+                        
+
+                    </div>
+
+                </div>
+            
             </div>
-        
+            
+            
         </div>
-        
-        
+
+
+
+
+
+
+
+
+
+
     </div>
-
-
-
-
-
-
-
-
-
-
 </div>
