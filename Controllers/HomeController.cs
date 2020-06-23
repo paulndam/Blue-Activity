@@ -107,7 +107,7 @@ namespace Exam.Controllers {
                 .Include (activiplanner => activiplanner.MyCenter)
                 .Include (otheruser => otheruser.OtherUsersComingToCenter)
                 .ThenInclude (u => u.User)
-                .Where (activitime => activitime.ActivityTime >= DateTime.Now && DateTime.Now <= activitime.Time)
+                .Where (activitime => activitime.Time >= DateTime.Now && DateTime.Now <= activitime.ActivityTime)
                 //.OrderByDescending (a => a.ActivityTime)
                 .ToList ();
 
